@@ -191,7 +191,7 @@ h1 {
 
 @keyframes flyIn {
     from {
-        left: 260px;
+        left: -260px;
         transformation: rotate(8deg)
     }
     to {
@@ -307,5 +307,44 @@ h1 {
     100% {
         transform: translateY(-330px) rotate(25deg) scale(0.25);
         opacity: 0;
+    }
+}
+
+.screen-shake {
+    animation: screenShake 0.15s 8;
+}
+
+@keyframes screenShake {
+    0% { transform: translate(0, 0); }
+    25% {transform: translate(5px, -3px); }
+    50% {transform: translate(-5px, 3px); }
+    75% { transform: translate(3px, 5px); }
+    100%{ transform: translate(0, 0); }
+}
+
+.fly-away {
+    animation: flyAway 2s ease-in forwards !important;
+}
+@keyframes flyAway {
+    from {
+        left: 62%;
+        transform: translateY(0) scale(1);
+    }
+    to {
+        left: 120%;
+        transform: translativeY(-180px) scale(0.35) rotate(15deg);
+    }
+}
+
+.scanning {
+    animation: scanColor 0.45s infinite alternate;
+}
+
+@keyframes scanColor {
+    from {
+        filter: brightness(1);
+    }
+    to {
+        filter: brightness(1.8);
     }
 }
